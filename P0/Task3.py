@@ -12,7 +12,7 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
-"""
+'''
 TASK 3:
 (080) is the area code for fixed line telephones in Bangalore.
 Fixed line numbers include parentheses, so Bangalore numbers
@@ -34,6 +34,19 @@ Print the answer as part of a message:
  <list of codes>
 The list of codes should be print out one per line in lexicographic order with no duplicates.
 
+'''
+called_by_bangalore = []
+
+for call in calls:
+  if call[0].startswith('(080)'):
+    called_by_bangalore.append(call[1])
+
+called_by_bangalore_unique = sorted(set(called_by_bangalore))
+
+print('The numbers called by people in Bangalore have codes:')
+print(*called_by_bangalore_unique, sep = '\n')
+
+'''
 Part B: What percentage of calls from fixed lines in Bangalore are made
 to fixed lines also in Bangalore? In other words, of all the calls made
 from a number starting with "(080)", what percentage of these calls
@@ -43,4 +56,14 @@ Print the answer as a part of a message::
 "<percentage> percent of calls from fixed lines in Bangalore are calls
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
-"""
+'''
+bangalore_receiver = 0
+for number in called_by_bangalore:
+  if number.startswith('(080)'):
+    bangalore_receiver += 1
+
+percentage = bangalore_receiver/len(called_by_bangalore) * 100
+print(f'{percentage:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
+
+
+
