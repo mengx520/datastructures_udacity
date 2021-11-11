@@ -21,7 +21,25 @@ receive texts or receive incoming calls.
 
 Print a message:
 "These numbers could be telemarketers: "
-<list of numbers>
+<list of numers>
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
+telemarketers = set()
+for call in calls:
+    telemarketers.add(call[0])
+
+for text in texts:
+    if text[0] in telemarketers:
+        telemarketers.remove(text[0])
+    if text[1] in telemarketers:
+        telemarketers.remove(text[1])
+
+for call in calls:
+    if call[1] in telemarketers:
+        telemarketers.remove(call[1])
+
+print('These numbers could be telemarketers: ')
+print(*sorted(telemarketers), sep = '\n')
+
+# Big(O) = O(n log n) Logarithmic time
