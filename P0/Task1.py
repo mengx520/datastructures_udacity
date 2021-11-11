@@ -49,10 +49,6 @@ for text in texts:
 for call in calls:
     number_set.update([call[0],call[1]])
 
-
 print(f'There are {len(number_set)} different telephone numbers in the records.')
 
-# Big(O) = O(N) linear time
-
-    
-
+# Big(O) = O(n) linear time
