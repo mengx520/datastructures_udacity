@@ -65,5 +65,4 @@ for number in called_by_bangalore:
 percentage = bangalore_receiver/len(called_by_bangalore) * 100
 print(f'{percentage:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
 
-
-
+# Big(O) = O(n log n) Logarithmic time
