@@ -1,0 +1,19 @@
+Task 0: Big(O) = 1 Constant time 
+Explanation: the number of operations doesn't change even though the text or call amount change
+there is no best or worst case because it directly access to the index of array
+
+Task 1: Big(O) = O(n) linear time
+Explanation: the number of operations will linearly increase with the amount of texts or calls
+there is no best or worst case because it always needs to loop through the whole data set
+
+Task 2: Big(O) = O(n) Linear time
+Explanation: the number of operations will linearly increase with the amount of texts or calls
+
+the best case is when the max amount caller is at the begining of the dictionary, the number of operation is O(n+1)
+the worst case is when the max amount caller is at the end of the dictionary, the number of operation is O(n+n)
+
+Task 3: Big(O) = O(n log n) Logarithmic time
+Explanation: the two loops in the code are O(n), but the sort function is O(n log n) so it makes the complexity of the program become O(n log n)
+
+Task 4: Big(O) = O(n log n) Logarithmic time
+Explanation: the two loops in the code are O(n), but the sort function is O(n log n) so it makes the complexity of the program become O(n log n)
