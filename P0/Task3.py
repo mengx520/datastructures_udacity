@@ -39,9 +39,16 @@ called_by_bangalore = []
 
 for call in calls:
   if call[0].startswith('(080)'):
-    called_by_bangalore.append(call[1])
+    if call[1][0] == '(':
+      end_position = call[1].find(')')
+      area_code = call[1][1:end_position]
+    else:
+      area_code = call[1].split(' ')[0]
+
+    called_by_bangalore.append(area_code)
 
 called_by_bangalore_unique = sorted(set(called_by_bangalore))
+
 
 print('The numbers called by people in Bangalore have codes:')
 print(*called_by_bangalore_unique, sep = '\n')
