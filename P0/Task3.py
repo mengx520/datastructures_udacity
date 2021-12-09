@@ -43,7 +43,7 @@ for call in calls:
       end_position = call[1].find(')')
       area_code = call[1][1:end_position]
     else:
-      area_code = call[1].split(' ')[0]
+      area_code = call[1][:4]
 
     called_by_bangalore.append(area_code)
 
@@ -65,8 +65,8 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 '''
 bangalore_receiver = 0
-for number in called_by_bangalore:
-  if number.startswith('(080)'):
+for area_code in called_by_bangalore:
+  if area_code == '080':
     bangalore_receiver += 1
 
 percentage = bangalore_receiver/len(called_by_bangalore) * 100
